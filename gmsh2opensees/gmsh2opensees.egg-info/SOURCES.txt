@@ -1,0 +1,6 @@
+README.md
+setup.py
+gmsh2opensees/gmsh2opensees.egg-info/PKG-INFO
+gmsh2opensees/gmsh2opensees.egg-info/SOURCES.txt
+gmsh2opensees/gmsh2opensees.egg-info/dependency_links.txt
+gmsh2opensees/gmsh2opensees.egg-info/top_level.txt
