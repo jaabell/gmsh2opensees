@@ -16,6 +16,9 @@
 # from gmsh2opensees import *
 # from g2o_utils import *
 from gmsh2opensees.g2o_utils import *
+from gmsh2opensees.g2o_nodes_functions import *
+from gmsh2opensees.g2o_elements_functions import *
+from gmsh2opensees.g2o_viz import *
 # import gmsh2opensees.g2o_utils
 # print("hithere")
 # print(dir(g2o_utils))

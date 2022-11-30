@@ -1,5 +1,19 @@
 
-A toy toolbox to demonstrate how to use gmsh with opensees together in python. 
+
+
+A simple python module to use gmsh and opensees together in python. 
+
+Dependencies
+------------
+
+You need to have [openseespy](openseespydoc.readthedocs.io) installed. Try
+
+    pip install openseespy
+
+or follow instructions at the openseespy website to compile your own. You also need gmsh python:
+
+	pip install gmsh
+
 
 Installation
 ------------
@@ -14,7 +28,24 @@ Use the `setup.py` script, using setuptools, to compile and install::
 
 If you dont' have sudo, you can install locally for your user with::
 
-	sudo python setup.py install --user
+	python setup.py install --user
+
+
+Quick start
+------------
+
+In your python script include the library 
+
+	import opensees as ops
+	import gmsh2opensees as g2o
+
+	# write your model
+
+To run execute:
+
+	python script_name.py
+
+See more examples in the examples folder. 
 
 
 Dependencies
