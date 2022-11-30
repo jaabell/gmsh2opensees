@@ -1,8 +1,9 @@
-![ShakerMaker](/example.png)
-
-
-
+gmsh2opensees
+=============
 A simple python module to use gmsh and opensees together in python. 
+
+![gmsh2opensees](/example.png)
+A deformed shape created with this tool. 
 
 Dependencies
 ------------
