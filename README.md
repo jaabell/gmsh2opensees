@@ -15,7 +15,7 @@ Tutorial
 Dependencies
 ------------
 
-You need to have [openseespy](openseespydoc.readthedocs.io) installed. Try
+You need to have [openseespy](http://openseespydoc.readthedocs.io) installed. Try
 
     pip install openseespy
 
