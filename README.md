@@ -5,6 +5,13 @@ A simple python module to use gmsh and opensees together in python.
 ![gmsh2opensees](/example.png)
 A deformed shape created with this tool. 
 
+Tutorial
+--------
+
+[<img src="https://i.ytimg.com/vi/Jj1TqGVdKeY/maxresdefault.jpg" width="50%">](https://www.youtube.com/watch?v=Jj1TqGVdKeY "gmsh2opensees")
+[Watch](https://www.youtube.com/watch?v=Jj1TqGVdKeY)
+
+
 Dependencies
 ------------
 
