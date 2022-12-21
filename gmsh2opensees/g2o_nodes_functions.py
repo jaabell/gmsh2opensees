@@ -102,3 +102,23 @@ def get_displacements_at_nodes(nodeTags):
 			ops.nodeDisp(tag,3)]
 
 	return disps
+
+
+def get_eigenvector_at_nodes(nodeTags, mode=1):
+	"""
+	Helper function to return an array of noda displacements corresponding to 
+	a list of node tags
+	"""
+	nodeTags = unique(array(nodeTags).reshape(-1))
+
+	Nnodes = len(nodeTags)
+
+	disps = zeros((Nnodes,3),dtype=float)
+
+	for i, tag in enumerate(nodeTags):
+		tag = int(tag)
+		disps[i,:] = [ops.nodeEigenvector(tag,mode,1),
+			ops.nodeEigenvector(tag,mode,2),
+			ops.nodeEigenvector(tag,mode,3)]
+
+	return disps
