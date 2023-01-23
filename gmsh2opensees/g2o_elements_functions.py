@@ -115,12 +115,13 @@ def get_element_info_from_elementType(elementType):
 	"""
 	info = {
 	#  elementType    Name                  Number of nodes
-		1         : ( "2-node-line"        ,        2       ) ,
-		2         : ( "3-node-triangle"    ,        3       ) ,
-		3         : ( "4-node-quadrangle"  ,        4       ) ,
-		4         : ( "4-node-tetrahedron" ,        4       ) ,
-		5         : ( "8-node-hexahedron"  ,        8       ) ,
-		15        : ( "1-node-point"       ,        1       ) ,
+		1         : ( "2-node-line"         , 2       )  ,
+		2         : ( "3-node-triangle"     , 3       )  ,
+		3         : ( "4-node-quadrangle"   , 4       )  ,
+		4         : ( "4-node-tetrahedron"  , 4       )  ,
+		5         : ( "8-node-hexahedron"   , 8       )  ,
+		11        : ( "10-node-tetrahedron" , 10      ) ,
+		15        : ( "1-node-point"        , 1       )  ,
 	}
 	if elementType in info:
 		return info[elementType]
