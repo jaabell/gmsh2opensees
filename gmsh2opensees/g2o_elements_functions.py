@@ -120,6 +120,7 @@ def get_element_info_from_elementType(elementType):
 		3         : ( "4-node-quadrangle"   , 4       )  ,
 		4         : ( "4-node-tetrahedron"  , 4       )  ,
 		5         : ( "8-node-hexahedron"   , 8       )  ,
+		9         : ( "6-node-triangle"     , 6       ) ,
 		11        : ( "10-node-tetrahedron" , 10      ) ,
 		15        : ( "1-node-point"        , 1       )  ,
 	}
