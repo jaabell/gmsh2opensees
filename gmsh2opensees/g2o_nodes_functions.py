@@ -34,7 +34,7 @@ def get_all_nodes(gmshmodel):
 
 
 
-def add_nodes_to_ops(nodeTags, gmshmodel, remove_duplicates=True):
+def add_nodes_to_ops(nodeTags, gmshmodel, remove_duplicates=True, scale_factor=1.0):
 	"""
 	Adds nodes in list nodeTags (coming from one of the other functions in this library)
 	to the opensees model. Possibly can avoid duplicates by setting the remove_duplicates flag. 
@@ -50,7 +50,7 @@ def add_nodes_to_ops(nodeTags, gmshmodel, remove_duplicates=True):
 
 	for nodeTag in nodeTags:
 		coord, parametricCoord, dim, tag = gmshmodel.mesh.get_node(nodeTag)
-		ops.node(int(nodeTag), *coord)
+		ops.node(int(nodeTag), *(scale_factor*coord))
 
 
 
@@ -84,7 +84,7 @@ def fix_nodes(nodeTags, dofstring, verbose=False):
 
 
 
-def get_displacements_at_nodes(nodeTags):
+def get_displacements_at_nodes(nodeTags, component=-1):
 	"""
 	Helper function to return an array of noda displacements corresponding to 
 	a list of node tags
@@ -93,13 +93,21 @@ def get_displacements_at_nodes(nodeTags):
 
 	Nnodes = len(nodeTags)
 
-	disps = zeros((Nnodes,3),dtype=float)
+	if component == -1:  #Assume 3 components, get them all
 
-	for i, tag in enumerate(nodeTags):
-		tag = int(tag)
-		disps[i,:] = [ops.nodeDisp(tag,1),
-			ops.nodeDisp(tag,2),
-			ops.nodeDisp(tag,3)]
+		disps = zeros((Nnodes,3),dtype=float)
+		for i, tag in enumerate(nodeTags):
+			tag = int(tag)
+			disps[i,:] = [ops.nodeDisp(tag,1),
+				ops.nodeDisp(tag,2),
+				ops.nodeDisp(tag,3)]
+
+	else: 
+		disps = zeros((Nnodes),dtype=float)
+		for i, tag in enumerate(nodeTags):
+			tag = int(tag)
+			disps[i] = ops.nodeDisp(tag,component)
+
 
 	return disps
 

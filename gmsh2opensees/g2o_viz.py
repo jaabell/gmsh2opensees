@@ -18,7 +18,7 @@ from numpy.linalg import norm
 from gmsh2opensees.g2o_nodes_functions import get_all_nodes, get_displacements_at_nodes, get_eigenvector_at_nodes
 
 
-def visualize_displacements_in_gmsh(gmshmodel, nodeTags=[], viewnum=-1,step=0,time=0.,new_view_name="Displacements"):
+def visualize_displacements_in_gmsh(gmshmodel, nodeTags=[], viewnum=-1,step=0,time=0.,new_view_name="Displacements", component=-1):
 	"""
 	Visualize displacement field in gmsh, only for defined nodes.
 	If view-number is not supplied, will create a new view. 
@@ -37,7 +37,7 @@ def visualize_displacements_in_gmsh(gmshmodel, nodeTags=[], viewnum=-1,step=0,ti
 		allGmshNodeTags, _ = get_all_nodes(gmshmodel)	
 	else:
 		allGmshNodeTags = nodeTags
-	displacement_data = get_displacements_at_nodes(allGmshNodeTags)
+	displacement_data = get_displacements_at_nodes(allGmshNodeTags, component)
 
 	if viewnum==-1:
 		viewnum = gmsh.view.add(new_view_name)
