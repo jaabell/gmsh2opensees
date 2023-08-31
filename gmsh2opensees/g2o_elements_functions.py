@@ -84,14 +84,26 @@ def get_elements_and_nodes_in_physical_group(groupname, gmshmodel):
 	for e in entities:
 		elementTypes, elementTags, nodeags = gmshmodel.mesh.getElements(dim, e)
 
+		if len(elementTypes) == 0:
+			print(f"get_elements_and_nodes_in_physical_group({groupname=}, {gmshmodel=})  ")
+			print("Physical group has no elements! (Mesh empty, try meshing beforehand.) ")
+			print(f"{dim=} ")
+			print(f"{e=} ")
+			print(f"{tag=} ")
+			exit(-1)
+
 		if len(elementTypes) != 1:
+			print(f"get_elements_and_nodes_in_physical_group({groupname=}, {gmshmodel=})  ")
 			print("Cannot handle more than one element type at this moment. Contributions welcome. ")
+			print(f"{elementTypes=} ")
 			exit(-1)
 
 		if base_element_type == -1:
 			base_element_type = elementTypes[0]
 		elif elementTypes[0] != base_element_type:
+			print(f"get_elements_and_nodes_in_physical_group({groupname=}, {gmshmodel=})  ")
 			print("All entities of physical group should have the same element type. Contributions welcome. ")
+			print(f"{elementTypes=} ")
 			exit(-1)
 
 
