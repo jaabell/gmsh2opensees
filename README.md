@@ -29,7 +29,7 @@ Installation
 
 For now, only though the git repo::
 
-	git clone git@github.com:jaabell/gmsh2opensees.git
+	git clone https://github.com/jaabell/gmsh2opensees.git
 
 Use the `setup.py` script, using setuptools, to compile and install::
 
